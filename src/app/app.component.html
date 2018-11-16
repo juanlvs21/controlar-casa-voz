@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="col-md-12 mt-5">
+        <div class="text-white text-center">
+            <h1>
+                Controlando con voz a tu <b style="margin-right:15px">Casa</b>
+                <button class="btn btn-outline-primary" (click)="startArtyom()">
+                  <i class="fa fa-microphone" style="color:green" *ngIf="escuchando"></i>
+                  <i class="fa fa-microphone" style="color:white" *ngIf="!escuchando"></i>
+                </button>
+                <button class="btn btn-outline-danger" (click)="stopArtyom()" style="margin-left:5px">
+                  <i class="fa fa-microphone-slash" style="color:red"></i>
+                </button>
+            </h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-3 offset-md-3">
+            <div class="card" style="height: 130px">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h5 class="card-title">Luces</h5>
+                        <div>
+                            <i class="fa fa-lightbulb-o fa-3x" style="color:gold" *ngIf="luces"></i>
+                        </div>
+                        <div>
+                            <i class="fa fa-lightbulb-o fa-3x" style="color:black" *ngIf="!luces"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="height: 130px">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h5 class="card-title">Alarma</h5>
+                        <div>
+                            <i class="fa fa-unlock-alt fa-3x" style="color:green" *ngIf="alarma"></i>
+                        </div>
+                        <div>
+                            <i class="fa fa-unlock-alt fa-3x" style="color:black" *ngIf="!alarma"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="text-center">Comandos Disponibles</h4>
+                    <p>
+                        <b>Saludar: </b> Hola, ey, hey.
+                    </p>
+                    <p>
+                        <b>Despedirse: </b> Chao, nos vemos.
+                    </p>
+                    <p>
+                        <b>Encender Luz: </b> Encender luz, encender luces, luz encendida, luces encendidas, luz prendida, luces prendidas, enciende la luz, enciende las luces, prende la luz, prende las luces.
+                    </p>
+                    <p>
+                        <b>Apagar Luz: </b> Apagar luz, apagar luces, luz apagada, luces apagadas, apaga la luz, apaga las luces.
+                    </p>
+                    <p>
+                        <b>Encender Alarma: </b> Activar alarma, encender alarma, alarma activada, alarma encendida, alarma prendida, enciende la alarma, activa la alarma, prende la alarma.
+                    </p>
+                    <p>
+                        <b>Apagar Alarma: </b> Desactivar alarma, apagar alarma, alarma apagada, alarma desactivada, apaga la alarma, desactiva la alarma.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
