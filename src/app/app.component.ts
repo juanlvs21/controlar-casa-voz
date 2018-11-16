@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import Artyom from '../assets/libs/artyom/artyom';
+// import Artyom from '../assets/libs/artyom/artyom';
+import Artyom from "artyom.js/build/artyom";
 
 @Component({
   selector: 'app-root',
@@ -38,6 +39,7 @@ export class AppComponent {
                 indexes:["chao","nos vemos"], // Lista de palabras para realizar la acción de despedida
                 action: () =>{ // Acción a realizar si se detecta una palabra de la lista
                     this.artyom.say("Hasta otra ocasión") 
+                    this.stopArtyom() // Se desactiva la captura de voz al despedirse
                 }
             },
             {
@@ -152,8 +154,7 @@ export class AppComponent {
     }
 
     startArtyom(){
-        this.artyom.fatality() // Para detener cualquier proceso de Artyom iniciado
-        this.escuchando = false
+        this.stopArtyom() // Llama a la función para detener procesos de Artyom que ya existan
         this.artyom.initialize({ // Inicializa Artyom con los siguientes paramentros
             lang:"es-ES",
             continuous: true,
